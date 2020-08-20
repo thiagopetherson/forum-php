@@ -5,12 +5,12 @@ Forum writed with php
 <ul>
   <li>1 - sistema de controle de usuários.<B>em andamento</b></li>
     <ul>
-      <li>1.A: Criar usuário</li>
+      <li>1.A: Criar usuário <b>Em andamento</b> </li>
       <li>1.B: Alterar usuário</li>
       <li>1.C: Excluir usuário</li>
-      <li>1.D: <i color="green">Fazer login<i>Feito</li>
+      <li>1.D: Fazer login <b>Feito</b> </li>
       <li>1.E: Fazer logout</li>
-      <li>1.B: Recuperar senha</li>
+      <li>1.F: Recuperar senha</li>
     </ul>
 </ul>
 
