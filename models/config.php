@@ -1,8 +1,8 @@
 <?php
 
-$param = "mysql:dbname=forum;dbhost=localhost";
+$param = "mysql:dbname=forum;host=localhost";
 $dbUser = "root";
-$dbPass = "";
+$dbPass = "12345";
 
 try{
     $pdo = new PDO($param, $dbUser, $dbPass);

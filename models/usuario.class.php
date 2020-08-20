@@ -33,12 +33,12 @@ class Usuario{
 
     public function checkVars(): bool{
         if(empty($this->getUsername()) || strlen($this->getUsername()) < 5)
-            $this->errors['nome'] = "nome inválido";
+            $this->errors['nome'][] = "nome inválido";
         
-        if(empty($this->getPassword()) || strlen($this->getUsername()) < 8)
-            $this->errors['senha'] = "senha inválida";
+        if(empty($this->getPassword()) || strlen($this->getPassword()) < 8)
+            $this->errors['senha'][] = "senha inválida";
 
-        if(count($this->errors) > 0 )
+        if(isset($this->errors) && !empty($this->errors) )
             return false;
 
         return true;
