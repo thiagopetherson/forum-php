@@ -1,7 +1,7 @@
 <?php
 
 $param = "mysql:dbname=forum;host=localhost";
-$dbUser = "root";
+$dbUser = "vibuso";
 $dbPass = "12345";
 
 try{

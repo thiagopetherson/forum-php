@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors', '1');
 declare(strict_types=1);
 
 class Usuario{
@@ -44,10 +45,36 @@ class Usuario{
         return true;
     }   
 
+
+    public function userExists($username): bool{
+        $sql = "SELECT id from usuarios where username = ?";
+        $sql = $this->pdo->prepare($sql);
+        $sql->execute(array(
+                        $username
+                        ));
+        if($sql->rowCount()>0)
+            return true;
+
+        return false;
+    }
+
+
     public function addUser(): bool{
+
+        if($this->checkVars() == false){
+            return false;
+        }
+
+        if($this->userExists($this->getUsername()))
+        {
+            $this->errors[] = "este usuário já existe"; 
+            return false;
+        }
+
+
         $query = "INSERT into usuarios(username, password) values(?, ?)";
         $sql = $this->pdo->prepare($query);
-        $sql->pdo->execute(array(
+        $sql->execute(array(
                                   $this->getUsername()    ,
                                   md5($this->getPassword())
                                 ));
@@ -58,14 +85,15 @@ class Usuario{
     
     }
 
+
     public function loginUser() : int{
         $sql = $this->pdo->prepare("SELECT id from usuarios where username = ? and password = ?");
         $sql->execute(array(
                             $this->getUsername()    ,
                             md5($this->getPassword())
                       ));
-        if($sql->fetch() > 0)
-                    return $sql->fetch()['id'];
+        if($sql->rowCount() > 0)
+                    return 1;
 
         return 0;
     }

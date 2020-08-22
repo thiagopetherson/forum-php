@@ -3,9 +3,10 @@
 <head>
     <title>Bem vindo ao For 1</title>
     <meta charset="utf8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+    <div id="main_container">
     <header>
         <h1>Faça login ou cadastre-se</h1>
     </header>
@@ -13,18 +14,19 @@
         <section>
             <form id="login"  method="POST">
                 <label for="username">Usuário</label>
-                <input type="text" name="username" required maxlength="30">
+                <input type="text" name="username" required maxlength="30"><br>
                 <label for="password">Senha</label>
-                <input type="password" name="password"/>
-                <input type="submit">
+                <input type="password" name="password"/><br>
+                <input type="submit" value="login">
             </form>            
             <a href="reset_password.php">Esqueci minha senha</a>
-            <a href="reset_password.php">Criar nova conta</a>
+            <a href="cadastrar.php">Criar nova conta</a>
         </section>
     </main>
     <foorter>
         <p>2020 - For1 - Forum livre</p>
     </foorter>
+    </div>
 </body>
 </html>
 
